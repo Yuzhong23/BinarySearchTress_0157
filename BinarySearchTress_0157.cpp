@@ -57,6 +57,21 @@ public:
             parent->rightchild = newNode; // Make the right child of the parent point to new node
         }
     }
+
+    void search(string element, Node*& parent, Node*& currentNode)
+    {
+        //this function searches the currentNode of the specifield Node as null as the current Node of itw parrent
+        currentNode = ROOT;
+        parent = nullptr;
+        while ((currentNode != nullptr) && (currentNode->info != element))
+        {
+            parent = currentNode;
+            if (element < currentNode->info)
+                currentNode = currentNode->leftchild;
+            else
+                currentNode = currentNode->rightchild;
+        }
+    }
 };
 
 int main()
