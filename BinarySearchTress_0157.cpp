@@ -30,9 +30,35 @@ public:
     {
         ROOT = nullptr; // initialiring ROOT to null
     }
+
+    void insert(string element) // insert a node in the Binary search tree
+    {
+        Node* newNode = new Node(element, nullptr, nullptr); // Allocate memory for the new node
+        newNode->info = element; // assign value to the data field of the new node
+        newNode->leftchild = nullptr; // make the field child of the new node point to NULL
+        newNode->rightchild = nullptr; // Make the right child of the new node point to NULL
+
+        Node* parent = nullptr;
+        Node* currentNode = nullptr;
+        search(element, parent, currentNode); // locate the node which will be the parent of the node to be insert
+
+        if (parent == nullptr) // if the parent is NULL(tree is empty)
+        {
+            ROOT - newNode; // mark the new node as ROOt
+            return; // Exit
+        }
+
+        if (element < parent->info) // If the value in the data field of the new node is less than that of the 
+        {
+            parent->leftchild = newNode; // Make the left child of the parent point to the new node
+        }
+        else if (element > parent->info) // if the value in the data field of the  new node is greater than that
+        {
+            parent->rightchild = newNode; // Make the right child of the parent point to new node
+        }
+    }
 };
 
 int main()
 {
-    std::cout << "Hello World!\n";
 }
