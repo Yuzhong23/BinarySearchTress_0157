@@ -158,6 +158,11 @@ int main()
             x.postorder(x.ROOT);
             break;
         }
+        case '5':
+        {
+            return 0;
+            break;
+        }
         }
     }
 }
